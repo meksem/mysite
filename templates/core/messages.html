@@ -1,0 +1,26 @@
+<style type="text/css" >
+.success {
+	background-color: #c9f4b9;
+	color: #52b52b;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #52b52b;
+  padding: 1px;
+  font-size: 10pt;
+  text-align:center;
+
+}
+</style>
+
+
+{% for message in messages %}
+
+<div class="success  alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            <strong>Message : </strong> {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+{% endfor %}
+

@@ -1,0 +1,98 @@
+
+{% block content%}
+    <div class="cd-signin-modal js-signin-modal"> <!-- this is the entire modal form, including the background -->
+        <div class="cd-signin-modal__container"> <!-- this is the container wrapper -->
+            <ul class="p-0 cd-signin-modal__switcher js-signin-modal-switcher js-signin-modal-trigger">
+                <li><a href="#0" data-signin="login" data-type="login">Sign in</a></li>
+                <li><a href="#0" data-signin="signup" data-type="signup">New account</a></li>
+            </ul>
+
+            <div class="cd-signin-modal__block js-signin-modal-block" data-type="login"> <!-- log in form -->
+                <form id="login-form" class="cd-signin-modal__form" action="signin" method="POST">
+                   {% csrf_token %}
+                    {{ form }}
+                 <h3 class="bigsentence black text-center font-weight-bold">Log in</h3>
+
+                    <div class="sentence" id="noenter">This account doesn't exist please try again or create a new account.</div> 
+                    <p class="cd-signin-modal__fieldset">
+                        <label class=" cd-signin-modal__label--email cd-signin-modal__label--image-replace cd-signin-modal__label" for="signin-email">Enter your email or username</label>
+                        <input class="  cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border" required id="username" name="username" type="text" placeholder="Email or username">
+                    </p>
+
+                    <p class=" cd-signin-modal__fieldset">
+                        <label class="cd-signin-modal__label cd-signin-modal__label--password cd-signin-modal__label--image-replace" for="signin-password">Enter your password</label>
+                        <input required name="password" class="passpad cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border" id="password" type="text"  placeholder="Password">
+                        <a href="#0" class="cd-signin-modal__hide-password js-hide-password sentence">Hide</a>
+                    </p>
+
+                    <p class="cd-signin-modal__fieldset">
+                        <input class="cd-signin-modal__input cd-signin-modal__input--full-width" name="submit" type="submit" value="LOG IN">
+                    </p>
+                </form>
+                
+                <p class="m-0 cd-signin-modal__bottom-message js-signin-modal-trigger sentence"><a href="#0" data-signin="reset">Forgot your password?</a></p>
+            </div> <!-- cd-signin-modal__block -->
+
+            <div class="cd-signin-modal__block js-signin-modal-block" data-type="signup"> <!-- sign up form -->
+                <form id="signup-form" class="cd-signin-modal__form" action="register" method="POST">
+                        {% csrf_token %}
+                          {{ form }}
+                    <h3 class="bigsentence black text-center font-weight-bold">Create</h3>
+
+                        <p class="cd-signin-modal__fieldset">
+                        <label class="cd-signin-modal__label cd-signin-modal__label--email cd-signin-modal__label--image-replace" for="signup-email">Username</label>
+                        <input required class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border signupfield" id="username" type="name" name="username" placeholder="Username ">
+                    </p>
+
+
+                    <p class="cd-signin-modal__fieldset">
+                        <label class="cd-signin-modal__label cd-signin-modal__label--email cd-signin-modal__label--image-replace" for="signup-email">Enter your email address</label>
+                        <input required class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border signupfield" id="email" type="email" name="email" placeholder="Enter your email address">
+                    </p>
+                     <p class="cd-signin-modal__fieldset">
+                        
+                        <label class="cd-signin-modal__label cd-signin-modal__label--password cd-signin-modal__label--image-replace" for="signin-password">Enter your password</label>
+                        <input required name="password" class="passpad cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border" id="password" type="text"  placeholder="Password">
+                    </p>
+
+               <p class="cd-signin-modal__fieldset">
+                        
+                        <label class="cd-signin-modal__label cd-signin-modal__label--password cd-signin-modal__label--image-replace" for="confirm_password">Renter your password</label>
+                        <input required name="password2" class="passpad cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border" id="confirm_password" type="text"  placeholder="ConfirmPassword" required>
+                    </p>
+                  
+
+
+                    <p class="cd-signin-modal__fieldset">
+                        <input class="cd-signin-modal__input cd-signin-modal__input--full-width" id="btnSubmit" name="submit" type="submit" value="GET STARTED">
+                    </p>
+                  
+                </form>
+    
+
+            </div> <!-- cd-signin-modal__block -->
+
+                 <div class="cd-signin-modal__block js-signin-modal-block" data-type="reset"> <!-- reset password form -->
+        
+                
+
+                    <form id="password-form" class="cd-signin-modal__form" action="titi.html" method="POST">
+                        <h3 style="padding:0!important; margin:0!important; height:20px!important; " class="bigsentence black text-center font-weight-bold">Reset your Password</h3>
+                        <p class="cd-signin-modal__fieldset">
+                            <label class="cd-signin-modal__label cd-signin-modal__label--password cd-signin-modal__label--image-replace cd-signin-modal__label cd-signin-modal__label--email sentence" id ="reset-email" for="reset-email">Please enter the email address associated with your account.</label>
+                            <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border" id="email" type="email" name="email" placeholder="Enter your email address">
+                            
+                        </p>
+
+                        <p class="cd-signin-modal__fieldset">
+                            <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding" type="submit"  name="submit" value="Reset password">
+                        </p>
+                    </form>
+
+                <p class="m-0 cd-signin-modal__bottom-message js-signin-modal-trigger"><a href="#0" data-signin="login">Back to log in</a></p>
+            </div> <!-- cd-signin-modal__block -->
+            <a href="#0" class="cd-signin-modal__close js-close">Close</a>
+        </div> <!-- cd-signin-modal__container -->
+    </div> <!-- cd-signin-modal -->
+
+    {% endblock %}

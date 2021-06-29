@@ -1,0 +1,265 @@
+
+<div class="container">
+             <!-- debut formulaire devis -->  
+  <div class="alert center-block " style ="width:500px;"role="alert">
+       {% include 'core/messages.html' %}
+  </div>
+  <h5 class="py-4 text-center">N'hesitez pas à demander un    
+    <button class="btn btn-primary"
+            type="button" 
+            data-toggle="collapse" data-target="#collapseDevis" 
+            aria-expanded="false" aria-controls="collapseDevis"> devis ici
+    </button>  pour votre idee ou projet
+ </h5>   
+  <div id="collapseDevis" class="collapse" aria-labelledby="headingDevis" data-parent="#accordion">
+    <div class="card-body" align="center">
+           <!-- form -->
+      <form class="well form-horizontal" action="" method="POST"  id="contact_form" name="devisgeneral">
+            {% csrf_token %}
+            
+        <fieldset>
+           <!-- Form Name -->
+          <legend>Contact Us Today!</legend>
+                 <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label">First Name</label>  
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input required name="firstname" placeholder="First Name" class="form-control"  type="text">
+              </div>
+            </div>
+          </div>
+                 <!-- Text input-->
+          <div class="form-group">
+                <label class="col-md-4 control-label" >Last Name</label> 
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input name="lastname" placeholder="Last Name" class="form-control"  type="text">
+              </div>
+            </div>
+          </div>
+               <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label">E-Mail</label>  
+              <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                  <input required name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+                </div>
+              </div>
+          </div>
+           
+            <div class="form-group">
+              <div class="row">
+                <label class="col-md-4 control-label">etes vous ?</label>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="particulier" value="Particulier" name="statut">
+                    <label class="form-check-label" for="inlineCheckbox1">Particulier</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="association" value="Association"name="statut">
+                    <label class="form-check-label" for="inlineCheckbox2">Association</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="société " value="Société" name="statut">
+                    <label class="form-check-label" for="inlineCheckbox3">Société </label>
+                 </div>
+               </div>  
+            </div>
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label">Phone</label>  
+                  <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                      <input required name="phone" placeholder="(845)555-1212" class="form-control" type="text">
+                    </div>
+                  </div>
+              </div>              
+              <div class="form-group">
+                <label class="col-md-4 control-label">Website or domain name</label>  
+                  <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+                      <input name="website" placeholder="Website or domain name" class="form-control" type="text">
+                    </div>
+                  </div>
+              </div>
+              <!-- Text area -->
+                <div class="form-group">
+                  <label class="col-md-4 control-label">Project Description</label>
+                    <div class="col-md-4 inputGroupContainer">
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                          <textarea class="form-control" name="description" placeholder="Project Description"></textarea>
+                      </div>
+                    </div>
+                </div>
+                        <!-- Success message -->
+                <div class="alert alert-success" role="alert" id="success_message">Success
+                  <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will 
+                                                                get back to you shortly.   
+                </div>
+                        <!-- Button -->
+                <div class="form-group">
+                  <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4">
+                       <!--<button type="submit" class="btn btn-warning" >Send <span class="glyphicon glyphicon-send"></span></button>-->
+                      <input class="cd-signin-modal__input cd-signin-modal__input--full-width"
+                             name="submit1" type="submit" value="devis">
+                    </div>
+                </div>
+
+
+
+        </fieldset>
+      </form>
+      <!-- fin form -->
+      <div class="msgFormDevis col-md-7">
+				<p class="alert alert-info">
+					<i class="fa fa-info-circle" aria-hidden="true"></i>
+					<b>Demande de devis gratuit.</b> Réponse moyenne sous 72h.<br> 
+					    Merci de détailler au maximum votre projet pour une réponse précise.
+				</p>           				
+			</div>
+
+             
+        
+
+     </div>
+  </div>
+</div>
+ <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-8216c69d01441f36c0ea791ae2d4469f0f8ff5326f00ae2d00e4bb7d20e24edb.js"></script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+<!--
+<script id="rendered-js" >
+$(document).ready(function () {
+  $('#contact_form').bootstrapValidator({
+    // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+    feedbackIcons: {
+      valid: 'glyphicon glyphicon-ok',
+      invalid: 'glyphicon glyphicon-remove',
+      validating: 'glyphicon glyphicon-refresh' },
+
+    fields: {
+      first_name: {
+        validators: {
+          stringLength: {
+            min: 2 },
+
+          notEmpty: {
+            message: 'Please supply your first name' } } },
+
+
+
+      last_name: {
+        validators: {
+          stringLength: {
+            min: 2 },
+
+          notEmpty: {
+            message: 'Please supply your last name' } } },
+
+
+
+      email: {
+        validators: {
+          notEmpty: {
+            message: 'Please supply your email address' },
+
+          emailAddress: {
+            message: 'Please supply a valid email address' } } },
+
+
+
+      phone: {
+        validators: {
+          notEmpty: {
+            message: 'Please supply your phone number' },
+
+          phone: {
+            country: 'US',
+            message: 'Please supply a vaild phone number with area code' } } },
+
+
+
+      address: {
+        validators: {
+          stringLength: {
+            min: 8 },
+
+          notEmpty: {
+            message: 'Please supply your street address' } } },
+
+
+
+      city: {
+        validators: {
+          stringLength: {
+            min: 4 },
+
+          notEmpty: {
+            message: 'Please supply your city' } } },
+
+
+
+      state: {
+        validators: {
+          notEmpty: {
+            message: 'Please select your state' } } },
+
+
+
+      zip: {
+        validators: {
+          notEmpty: {
+            message: 'Please supply your zip code' },
+
+          zipCode: {
+            country: 'US',
+            message: 'Please supply a vaild zip code' } } },
+
+
+
+      comment: {
+        validators: {
+          stringLength: {
+            min: 10,
+            max: 200,
+            message: 'Please enter at least 10 characters and no more than 200' },
+
+          notEmpty: {
+            message: 'Please supply a description of your project' } } } } }).
+
+
+
+
+
+  on('success.form.bv', function (e) {
+    $('#success_message').slideDown({ opacity: "show" }, "slow"); // Do something ...
+    $('#contact_form').data('bootstrapValidator').resetForm();
+
+    // Prevent form submission
+    e.preventDefault();
+
+    // Get the form instance
+    var $form = $(e.target);
+
+    // Get the BootstrapValidator instance
+    var bv = $form.data('bootstrapValidator');
+
+    // Use Ajax to submit form data
+    $.post($form.attr('action'), $form.serialize(), function (result) {
+      console.log(result);
+    }, 'json');
+  });
+});
+//# sourceURL=pen.js
+    </script>
+     fin formulaire devis  
+-->
+

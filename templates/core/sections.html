@@ -1,0 +1,840 @@
+{% load static %}
+{% block section %}
+        <!-- About-->
+        <section class="page-section bg-primary" id="about">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="text-white mt-0">Une relation de confiance avec ses clients!</h2>
+                        <hr class="divider light my-4" />
+                        <p class="text-white-50 mb-4">La priorité de GOTICDZ est la 
+                        satisfaction de ses clients. A chaque étape de la 
+                        construction d'un projet, les remarques de nos clients 
+                        sont analysées et nous nous efforçons de les prendre en 
+                        compte dans le développement ou la correction des logiciels. 
+                        Notre point fort est également la reactivité.
+                         Nous recherchons des solutions dans les plus brefs délais.
+                          Grâce à ces pratiques, nous avons une grande fidélité de nos clients!</p>
+                        <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- DEBUT SECTION TARIF-->
+<section class="page-section" id="tarifs">
+    <div class="demo10">  
+        {% include 'core/devis.html' %}
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="pricingTable10">
+                    <div class="pricingTable-header">
+                        <h2 class="heading1">Site vitrine standard</h2>
+                            <span class="price-value">
+                                <span class="txt">À partir de</span>
+                                    <span class="currency"> €</span> 1099
+                                <span class="txt1">Développé sous WORDPRESS</span>                            
+                        </span>  
+                    </div>
+
+                    <div class="pricing-content1">
+                        <ul>
+                            <li>Site responsive (adapté tous supports)</li>
+                            <li>Interface administrateur STANDARD </li>
+                            <li>Formulaire de contact </li>
+                            <li>Optimisation du référencement </li>
+                            <li>Statistiques de visite </li>
+                            <li>Mise en ligne du site </li>
+                            <li>Formation utilisation du site</li>
+                            
+                        </ul>
+                        <a href="#bannerformmodal" class="read" data-toggle="modal" data-target="#bannerformmodal" >Demander un devis</a>
+                        <div class="modal fade bannerformmodal " tabindex="-1" role="dialog" aria-labelledby="bannerformmodal" aria-hidden="true" id="bannerformmodal">                                                <div class="modal-dialog modal-sm">
+                            <div class="modal-content"style="width:450px;">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                            
+                                            <h4 class="modal-title" id="myModalLabel">Demande de devis</h4>
+                                        <button type="button" class="close" data-dismiss="modal"aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body ">
+                                        <form id="requestacallform" method="POST" action ="" name="demandedevis" >
+                                                    {% csrf_token %}
+                                                    
+                                            <div class="form-group">
+                                                <div class="input-group">                               
+                                                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                                    <input id="firstname" type="text" class="form-control" placeholder="First Name" name="firstname">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="input-group">                               
+                                                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                                    <input id="prenom" type="text" class="form-control" placeholder="Last Name" name="lastname"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="input-group">                               
+                                                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                                    <input id="email" type="text" class="form-control" placeholder="Email" name="email" onchange="validateEmailAdd();"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="input-group">                               
+                                                    <span class="input-group-addon">   <i class="fas fa-building"></i></span>
+                                                    <select class="form-control" name="statut" class="selectpicker">
+                                                    <option>quelle formule voulez-vous?</option>
+                                                    <option>Particulier</option>
+                                                    <option>Asoociation</option>
+                                                    <option>Société</option>
+                                                    </select>
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="input-group">                               
+                                                    <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                                                    <input id="phone_mobile" type="text" class="form-control" placeholder="Mobile" name="phone"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fas fa-globe"></i></span>
+                                                    <select class="form-control" name="pack_choice" class="selectpicker">
+                                                    <option>quelle formule voulez-vous?</option>
+                                                    <option>Site vitrine standard</option>
+                                                    <option>E-Commerce</option>
+                                                    <option>Option boutique</option>
+                                                    <option>Option mini-boutique/option>
+                                                    <option>Appli Mobile</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <div class="controls">                     
+                                                    <textarea id="description" type="text" name="description"  placeholder="Description"></textarea>
+                                                </div>
+                                            </div>
+                                            <input class="cd-signin-modal__input cd-signin-modal__input--full-width" name="submit" type="submit" value="DEMANDEZ DEVIS">
+
+                                        </form>                                                        
+
+                                    </div>
+                                                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="pricingTable10">
+                <div class="pricingTable-header">
+                    <h3 class="heading">E-COMMERCE</h3>
+                    <span class="price-value">
+                        <span class="txt">À partir de</span>
+                                    <span class="currency"> €</span> 2699
+                                <span class="txt1">clé en main</span>
+                        </span>
+                </div>
+                <div class="pricing-content1">
+                    <ul>     
+                        <li>Développé sous PRESTASHOP ou WORDPRESS  (Outil de gestion de contenu) </li>
+                        <li>Domaine + hébergement + e-mail pendant 12 mois</li>
+                        <li>Site responsive (adapté tous supports)</li>
+                        <li>Optimisation du référencement et des performances </li>
+                        <li>1Mise en place du contenu (textes & images) </li>
+                        <li>Front end & Backend sur mesure</li>
+                        <li> Conteur Statistiques de visite</li>           
+                        <li style = "background-color:#D8D8D8;">
+                            <div class="md-v-line "></div>
+                            <i class="fas fa-shopping-cart">
+                            </i> Option mini-boutique :
+                                <span class="price-value">
+                                    <span class="txt">À partir de</span>
+                                    <span class="currency"> €</span> 35O HT 
+                        </li>   
+                        <li class="list-group-item">Gestion simple des articles</li>
+                        <li class="list-group-item">Règlement par Paypal </li>
+                        <li class="list-group-item">Gestion simple des taxes.</li>
+                        <li class="list-group-item">Images produit.</li>
+                        </ul>
+
+                    <a href="#" class="read">Demander un devis</a>
+                </div>
+            </div>
+         </div>
+         <div class="col-md-3 col-sm-6">
+            <div class="pricingTable10">
+                <div class="pricingTable-header">
+                    <h4 class="heading">Option boutique </h4>
+                    <span class="price-value">
+                        <span class="txt">À partir de</span>
+                                    <span class="currency"> €</span> 950
+                    </span>
+                    
+                </div>
+                <div class="pricing-content1">      
+                    <ul>
+                        <li>Configuration de la TVA.</li>
+                        <li>Gestion des comptes d'utilisateurs</li>
+                        <li>Gestion produits et catégories.</li>
+                        <li>Gestion des stocks.</li>
+                        <li>Gestion des commandes.</li>
+                        <li>Gestion des paiements.</li>
+                        <li>Gestion des livraisons.</li>
+                        <li>Module de mise en avant des produits.</li>
+                        <li>
+                            <a href="#staticBackdrop" data-toggle="modal" >
+                                <div class="menuItem">voir fonctions intégrées >>>></div>
+                            </a>
+                                        <!-- Modal -->
+                            <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-scrollable">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticBackdropLabel">Fonctions intégrées</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div><span class="icon-circle-arrow-right">&nbsp;</span><strong>Fonctions E-commerce de base:</strong></div>
+                                                    <p><span class="icon-shopping-cart">&nbsp;</span><strong>Catalogue</strong></p>
+                                                    <ul>
+                                                        <li>Possibilité de catégories imbriquées</li>
+                                                        <li>Meta tags pour le référencement</li>
+                                                        <li>Description et des médias</li>
+                                                    </ul>
+                                                    <p><span class="icon-shopping-cart">&nbsp;</span><strong>Produits</strong></p>
+                                                    <ul>
+                                                        <li>Description courte et longue, avec possibilité d'integration de plug-in Joomla</li>
+                                                        <li>Dimensions (poids, taille)</li>
+                                                        <li>Plusieurs types de médias</li>
+                                                        <li>Variante de produits</li>
+                                                        <li>Variantes de produits avec gestion de stock</li>
+                                                        <li>Nombre illimité de produits enfants et des niveaux dérivés</li>
+                                                        <li>Produit utilisé comme modèle de parent pour les produits pour enfants)</li>
+                                                        <li>Produits connexes</li>
+                                                        <li>Catégories connexes</li>
+                                                        <li>Produits visible par groupe client</li>
+                                                        <li>Meta tags pour le référencement</li>
+                                                    </ul>
+                                                    <p><span class="icon-shopping-cart">&nbsp;</span><strong>Calculateur dynamique</strong></p>
+                                                    <ul>
+                                                        <li>Rabais basé sur une période, par catégorie, par groupe client, par pays, et / ou l'état</li>
+                                                        <li>Taxe basée sur une période, par catégorie, par groupe client, par pays, et / ou l'état</li>
+                                                        <li>Rabais, taxe par produit</li>
+                                                        <li>Remises, ou taxes dans leurs propres devises</li>
+                                                    </ul>
+                                                    <p><span class="icon-shopping-cart">&nbsp;</span><strong>Gestion des Prix</strong></p>
+                                                    <ul>
+                                                        <li>Prix affiché en fonction du groupe client</li>
+                                                        <li>Prix affiché en fonction d'une devise</li>
+                                                        <li>Différents format monétaire par devise</li>
+                                                    </ul>
+                                                    <p><span class="icon-shopping-cart">&nbsp;</span><strong>Multi-devises réel</strong></p>
+                                                    <ul>
+                                                        <li>Taux de change automatique</li>
+                                                        <li>Taux de change fixe</li>
+                                                    </ul>
+                                                    <p><span class="icon-shopping-cart">&nbsp;</span><strong>Inventaire</strong></p>
+                                                    <ul>
+                                                        <li>Inventaire</li>
+                                                        <li>Alerte de stock</li>
+                                                        <li>Stock virtuel</li>
+                                                    </ul>
+                                                    <p><span class="icon-shopping-cart">&nbsp;</span><strong>Fabricants</strong></p>
+                                                    <ul>
+                                                        <li>Fiche complète avec email, url, et images</li>
+                                                    </ul>
+                                                    <p><span class="icon-shopping-cart">&nbsp;</span><strong>Groupes clients</strong></p>
+                                                    <ul>
+                                                        <li>Prix en fonction des groupes clients</li>
+                                                        <li>Affichage des prix en fonction des groupes clients</li>
+                                                        <li>Mode de paiment et de livraison selon les groupes groupes clients</li>
+                                                    </ul>
+                                                    <p><span class="icon-shopping-cart">&nbsp;</span><strong>Gestion des Clients</strong></p>
+                                                    <ul>
+                                                        <li>Formulaire d'inscription et de livraison personnalisable</li>
+                                                        <li>Commandes anonymes ou avec création de compte</li>
+                                                        <li>Carnet d'adresses</li>
+                                                        <li>Défaut de facturation et adresse de livraison</li>
+                                                        <li>Défaut de paiement et l'expédition méthode</li>
+                                                        <li>Chèque de TVA intracommunautaire id (ne fonctionne pas encore)</li>
+                                                    </ul>
+                                                    <p><span class="icon-shopping-cart">&nbsp;</span><strong>Modes de paiement</strong></p>
+                                                    <ul>
+                                                        <li>Définis par groupes clients</li>
+                                                        <li>Fonction du montant de la commande</li>
+                                                        <li>Les modules de paiement pour les banques françaises sont en cours de développement.</li>
+                                                    </ul>
+                                                    <p><span class="icon-shopping-cart">&nbsp;</span><strong>Modes d'expédition</strong></p>
+                                                    <ul>
+                                                        <li>Définis par groupes clients</li>
+                                                        <li>Franco de port en fonction d'un montant</li>
+                                                        <li>Fonction d'un pays et/ou état et/ou d'un code postal</li>
+                                                    </ul>
+                                                    <p><span class="icon-shopping-cart">&nbsp;</span><strong>Commande</strong></p>
+                                                    <ul>
+                                                        <li>Commande anonyme ou avec enregistrement de compte</li>
+                                                        <li>Panier stocké dans une session</li>
+                                                        <li>Commande en 1 clic, ou commande par étape</li>
+                                                        <li>Intégration de SSL</li>
+                                                    </ul>
+                                                    <p><span class="icon-shopping-cart">&nbsp;</span><strong>Gestion des commandes dans le Back Office</strong></p>
+                                                    <ul>
+                                                        <li>Liste des commandes</li>
+                                                        <li>Historique des commandes</li>
+                                                    </ul>
+                                                    <p><span class="icon-shopping-cart">&nbsp;</span><strong>Gestion des commandes par le client</strong></p>
+                                                    <ul>
+                                                        <li>Suivi des commandes pour les clients anonymes</li>
+                                                        <li>Suivi des commandes pour les clients ayant un compte</li>
+                                                    </ul>
+                                                    <p><span class="icon-shopping-cart">&nbsp;</span><strong>Template</strong></p>
+                                                    <ul>
+                                                        <li>Différent template joomla par catégorie</li>
+                                                        <li>Page personnalisable par catégorie</li>
+                                                        <li>Page personnalisable par catégorie de produit / produit</li>
+                                                        <li>Surcharge des templates d'envoi de mails</li>
+                                                    </ul>
+                                                    <p><span class="icon-shopping-cart">&nbsp;</span><strong>Affichage des produits</strong></p>
+                                                    <ul>
+                                                        <li>Les derniers produits</li>
+                                                        <li>Les plus vendus</li>
+                                                        <li>Produit vedettes</li>
+                                                        <li>Produits aléatoires</li>
+                                                        <li>Consultable</li>
+                                                    </ul>
+                                                    <p><span class="icon-shopping-cart">&nbsp;</span><strong>Outils marketing et Promotions</strong></p>
+                                                    <ul>
+                                                        <li>Chèque boutique</li>
+                                                        <li>Recommander un produit à un ami</li>
+                                                    </ul>                                                                                                     
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                                                <!-- fin modal -->
+                    <a href="#" class="read">Demander un devis</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="pricingTable10">
+                <div class="pricingTable-header">
+                    <h4 class="heading">Application mobile</h4>
+                    <span class="price-value">
+                        <span class="txt">À partir de</span>
+                                    <span class="currency"> €</span> 3560
+                    </span>
+                </div>
+                <div class="pricing-content1">
+                    <ul class="list-group">
+                            <li style = "background-color:#D8D8D8;">
+                            <div class="md-v-line "></div>
+                            <i class="fa fa-mobile" >
+                            </i> Application mobile native :
+                        </li>   
+
+                        <li>applications mobiles natives sur mesure, complètes et sécurisées</li>
+                        <li>a refonte & l’optimisation</li>
+                        <li>gérons le back-office</li>
+                        <li>mise en sécurité de l' application</li>
+                        <li style = "background-color:#F4FA58;">
+                            <div class="md-v-line "></div>
+                            <i class="fa fa-mobile" >
+                            </i> Application mobile hybride :
+                        </li> 
+                    </ul>
+                    <a href="#" class="read">Demander un devis</a>
+                </div>
+            </div>
+        </div>       
+    </div>
+        
+<section>   
+<!-- fin section tarifs-->
+ <!-- Services-->
+<section class="page-section" id="services">
+    <div class="container">
+        <h2 class="text-center mt-0">At Your Service</h2>
+            <hr class="divider my-4" />
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-lightbulb text-primary mb-4" aria-hidden="true"></i>
+                            <h3 class="h4 mb-2">Gestion de projets web</h3>
+                            <p class="text-muted mb-0">
+                            Quelques exemples de développements informatiques réalisés par GOTICDZ                 
+                            </p>
+                                      <!-- Accordions  example-->      
+                        
+                            <div id="accordion">
+                            <!-- Accordion  1 -->   
+                                <div class="card">
+                                    <div class="card-header" id="headingOne">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Intranet d'entreprise
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul class="list-group">
+                                                <li class="list-group-item list-group-item-primary">Liste des clients.</li>
+                                                <li class="list-group-item list-group-item-secondary">Imports / Exports automatisés avec plateforme centralisée<./li>
+                                                <li class="list-group-item list-group-item-success">Gestion des contrats.</li>
+                                                <li class="list-group-item list-group-item-danger">Gestion des règlements.</li>
+                                                <li class="list-group-item list-group-item-warning">Statistiques.</li>
+                                                <li class="list-group-item list-group-item-info">Recherches avancées de client.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                            <!-- Accordion  2 -->   
+                                <div class="card">
+                                    <div class="card-header" id="headingTwo">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            Site institutionnel
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                        <div class="card-body">
+                                                <ul class="list-group">
+
+                                                    <li class="list-group-item list-group-item-primary">Présentation de l'organisme.</li>
+                                                    <li class="list-group-item list-group-item-secondary">Inscription à une newsletter.</li>
+                                                    <li class="list-group-item list-group-item-success">Pré-renseignement de formulaires d'inscription PDF.</li>
+                                                    <li class="list-group-item list-group-item-danger">Synchronisation de données avec une base de données locale.</li>
+                                                </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                         <!-- Accordion  3 -->   
+                                <div class="card">
+                                    <div class="card-header" id="headingThree">
+                                        <h5 class="mb-0">
+                                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                Site vitrine
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul class="list-group">
+                                                <li class="list-group-item list-group-item-primary">Présentation de l'organisme.</li>
+                                                <li class="list-group-item list-group-item-secondary">Inscription à une newsletter.</li>
+                                                <li class="list-group-item list-group-item-success">Pré-renseignement de formulaires d'inscription PDF.</li>
+                                                <li class="list-group-item list-group-item-danger">Synchronisation de données avec une base de données locale.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Accordion  4 -->   
+                                <div class="card">
+                                    <div class="card-header" id="headingThree">
+                                        <h5 class="mb-0">
+                                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFor" aria-expanded="false" aria-controls="collapseFor">
+                                                Site ecommerce
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseFor" class="collapse" aria-labelledby="headingFor" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul class="list-group">
+                            
+                                                <li class="list-group-item list-group-item-primary">Liste des produits.</li>
+                                                <li class="list-group-item list-group-item-secondary">Comptes client.</li>
+                                                <li class="list-group-item list-group-item-success">Gestion du panier.</li>
+                                                <li class="list-group-item list-group-item-danger">Interface de commande.</li>
+                                                <li class="list-group-item list-group-item-danger">IPaiement en ligne.</li>
+
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Accordion  5-->   
+                                <div class="card">
+                                    <div class="card-header" id="headingThree">
+                                        <h5 class="mb-0">
+                                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                                QCM en ligne
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul class="list-group">
+                            
+                                                <li class="list-group-item list-group-item-primary">Redaction des Questionnaires</li>
+                                                <li class="list-group-item list-group-item-secondary">Interface d'examen</li>
+                                                <li class="list-group-item list-group-item-success">Présentation des résultats et des corrigés</li>
+                                                <li class="list-group-item list-group-item-danger">Graphique de progression suivant différentes sessions</li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Accordion  6-->   
+                                <div class="card">
+                                    <div class="card-header" id="headingThree">
+                                        <h5 class="mb-0">
+                                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                                Logiciel de facturation
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul class="list-group">
+                            
+                                                <li class="list-group-item list-group-item-primary">Liste des prestations.</li>
+                                                <li class="list-group-item list-group-item-secondary">Base des clients.</li>
+                                                <li class="list-group-item list-group-item-success">Création de factures.</li>
+                                                <li class="list-group-item list-group-item-danger">Envoi automatique des factures par Email.</li>
+                                                <li class="list-group-item list-group-item-success">Génération automatique de factures récurantes.</li>
+
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                             <!--END ACCODEON-->
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-file-code text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Développements spécifiques</h3>
+                            <p class="text-muted mb-0">Des outils adaptés à votre coeur de métier, applications & solutions personnalisées.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-cogs text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Développeur full stack</h3>
+                            <p class="text-muted mb-0">GOTICDZ capable de réaliser la programmation d’un site ou d'une application web à la fois en front-end et back-end.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-trophy text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Tout en un.</h3>
+                            <p class="text-muted mb-0">GOTICDZ  s’occupe de tout,de la création à la mise en ligne.</p>
+                        </div>
+                    </div>
+                </div>
+     </div>
+</section>
+        <!-- Portfolio-->
+<div id="portfolio">
+    <div class="container-fluid p-0">
+        <div class="row no-gutters">  
+            <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="{% static 'assets/img/portfolio/fullsize/1.jpg' %}">
+                            <img class="img-fluid" src="{% static 'assets/img/portfolio/thumbnails/1.jpg' %}" alt="" />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Compétences</div>
+                                <div class="project-name">Listes</div>
+                            </div>
+                        </a>
+            </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="{% static 'assets/img/portfolio/fullsize/2.jpg' %}">
+                            <img class="img-fluid" src="{% static 'assets/img/portfolio/thumbnails/2.jpg' %}" alt="" />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Project Name</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="{% static 'assets/img/portfolio/fullsize/3.jpg' %}">
+                            <img class="img-fluid" src="{% static 'assets/img/portfolio/thumbnails/3.jpg' %}" alt="" />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Project Name</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="{% static 'assets/img/portfolio/fullsize/4.jpg' %}">
+                            <img class="img-fluid" src="{% static 'assets/img/portfolio/thumbnails/4.jpg' %}" alt="" />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Project Name</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="{% static 'assets/img/portfolio/fullsize/5.jpg' %}">
+                            <img class="img-fluid" src="{% static 'assets/img/portfolio/thumbnails/5.jpg' %}" alt="" />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Project Name</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="{% static 'assets/img/portfolio/fullsize/6.jpg' %}">
+                            <img class="img-fluid" src="{% static 'assets/img/portfolio/thumbnails/6.jpg' %}" alt="" />
+                            <div class="portfolio-box-caption p-3">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Project Name</div>
+                            </div>
+                         
+                         
+                        </a>
+                    </div>                  
+        </div>
+    </div>
+    <div class="col-md-5 ">
+                <h2 class="h6"  style="color:white;"> Compétences en développement </h2>
+        <ul>
+             <li class ="toto">
+                <h2>Frontend</h2>
+                
+                <!-- HTML5 -->
+                <p style="width:80%;color: green;" data-value="80">HTML5</p>
+                <progress max="100" value="80" class="html5">
+                    <!-- Browsers that support HTML5 progress element will ignore the html inside `progress` element. Whereas older browsers will ignore the `progress` element and instead render the html inside it. -->
+                    <div class="progress-bar">
+                        <span style="width: 80%">80%</span>
+                    </div>
+                </progress>
+                        
+                    <!-- CSS3 -->
+                    <p style="width:60%;color: green;" data-value="60">CSS3</p>
+                    <progress max="100" value="60" class="css3">
+                        <!-- Browsers that support HTML5 progress element will ignore the html inside `progress` element. Whereas older browsers will ignore the `progress` element and instead render the html inside it. -->
+                        <div class="progress-bar">
+                            <span style="width: 60%">60%</span>
+                        </div>
+                    </progress>
+    
+                <!-- jQuery -->
+                <p style="width:50%;color: green;" data-value="50">jQuery</p>
+                <progress max="100" value="50" class="jquery">
+                        <!-- Browsers that support HTML5 progress element will ignore the html inside `progress` element. Whereas older browsers will ignore the `progress` element and instead render the html inside it. -->
+                        <div class="progress-bar">
+                            <span style="width: 50%">50%</span>
+                        </div>
+                </progress>
+    
+            </li>
+                <li class ="toto">
+                    <h2>Backend</h2>
+                    
+                    <!-- Python -->
+                    <p style="width:75%;color: green;" data-value="75">Python</p>
+                    <progress max="100" value="75" class="python">
+                    <!-- Browsers that support HTML5 progress element will ignore the html inside `progress` element. Whereas older browsers will ignore the `progress` element and instead render the html inside it. -->
+                        <div class="progress-bar">
+                            <span style="width: 75%">75%</span>
+                        </div>
+                    </progress>
+                    
+                    <!-- PHP -->
+                    <p style="width:65% ;color: green;" data-value="65">PHP</p>
+                    <progress max="100" value="65" class="php">
+                    <!-- Browsers that support HTML5 progress element will ignore the html inside `progress` element. Whereas older browsers will ignore the `progress` element and instead render the html inside it. -->
+                            <div class="progress-bar">
+                                <span style="width: 65%">65%</span>
+                            </div>
+                    </progress>
+                    
+                        <!-- Node.js -->
+                    <p style="width:85% ; color: green;" data-value="85">Java</p>
+                    <progress max="100" value="85" class="java">
+                    <!-- Browsers that support HTML5 progress element will ignore the html inside `progress` element. Whereas older browsers will ignore the `progress` element and instead render the html inside it. -->
+                            <div class="progress-bar">
+                                <span style="width: 85%">85%</span>
+                            </div>
+                    </progress>   
+                        
+                </li>
+        </ul>
+   </div>
+    <div class="col-md-7 ">
+            <h2 class="h6"  style="color:white;"> Domaines de compétences </h2>
+            <div class="row ">
+        <div class="list-group">
+            <a href="#" class="list-group-item active" title="Secteurs d'activité">
+            Secteurs d'activité
+            </a>
+            <a href="#" class="list-group-item" title="Industrie"><i class="fa fa-industry"></i> Industrie</a>
+            <a href="#" class="list-group-item" title="Automobile"><i class="fa fa-automobile"></i> Automobile</a>
+            <a href="#" class="list-group-item" title="Téléphonie"><i class="fa fa-mobile"></i> Téléphonie</a>
+            <a href="#" class="list-group-item" title="Banque"><i class="fa fa-bank"></i> Banque</a>
+        </div> 
+        <div class="col-7 ">
+            <ul class="list-group ">
+                <li class="list-group-item">Développeur Full-stack</li>
+                <li class="list-group-item list-group-item-primary" style="font-size:12px">Applications spécifiques et Interface
+                d'administration &nbsp;&nbsp;
+                PYTHON - PHP - MySQL - AJAX / JQUERY - SQL
+                </li>
+                <li class="list-group-item list-group-item-secondary"style="font-size:12px">
+                Mise en place / Modification / Gestion de CMS
+                    Wordpress, Joomla, Prestashop  
+                </li>
+                <li class="list-group-item list-group-item-success"style="font-size:12px">
+                Conception multi-plateformes
+                Compatible tous supports, tablette & application mobile 
+                </li>
+                <li class="list-group-item list-group-item-danger"style="font-size:12px">
+                alidation W3C, WAI & référencement naturel SEO
+                Accessibilité & ergonomie des pages web       
+                </li>
+                <li class="list-group-item list-group-item-warning">Intégration HTML5, CSS et Javascript</li>
+            </ul>
+        </div>
+     </div>
+</div>
+        <!-- Call to action-->
+<section class="page-section bg-dark text-white">
+    <div class="container text-center">
+        <!--- <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
+        <a class="btn btn-light btn-xl" href="{% static 'https://startbootstrap.com/theme/creative/' %}">Download Now!</a>
+            -->
+    </div>
+</section>
+        <!-- Contact-->
+<section class="page-section" id="contact">
+            <!-- Footer -->
+    <footer class="page-footer font-small mdb-color lighten-3 pt-4">
+            <!-- Footer Links -->
+       <div class="container text-center text-md-left">
+              <!-- Grid row -->
+            <div class="row">
+                  <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+                     <!-- Content -->
+                     <h5 class="font-weight-bold text-uppercase mb-4">GOTICDZ-MYTICPRO</h5>
+					   Notre expertise 360° et notre excellence de delivery au service de       vos projets
+					<div class="rw-words rw-words-1">
+						<span style="font-size: 120%; font-weight: bold;">e-commerce</span>
+						<span style="font-size: 120%; font-weight: bold;">de plateformes web</span>
+						<span style="font-size: 120%; font-weight: bold;">de transformation digital</span>
+						<span style="font-size: 120%; font-weight: bold;">d'application mobile</span>
+					
+					</div>
+                </div>
+                  <!-- Grid column -->
+                <hr class="clearfix w-100 d-md-none">
+
+                     <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1">
+                     <!-- Links -->
+                     <h5 class="font-weight-bold text-uppercase mb-4">About</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <p> <a href="#!">PROJECTS</a> </p>
+                        </li>
+                        <li>
+                            <p> <a href="#!">ABOUT US</a> </p>
+                        </li>
+                        <li>
+                            <p> <a href="#!">BLOG</a>  </p>
+                        </li>
+                        <li>
+                            <p> <a href="#!">AWARDS</a> </p>
+                        </li>
+                    </ul>
+
+                </div>
+                                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none">
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
+                     <!-- Contact details -->
+                    <h5 class="font-weight-bold text-uppercase mb-4">Address</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <p><i class="fas fa-home mr-3"></i> Villeparisis, 77270, France</p>
+                       </li>
+                        <li>
+                            <p>  <i class="fas fa-envelope mr-3"></i> <a href="mailto:meksem.ke@gmail.com">info@contact.com<</a></p>
+                        </li>
+                        <li>
+                            <p> <i class="fas fa-phone mr-3"></i> + 06 62 14 55 21 </p>
+                        </li>
+                        <li> 
+                        <p> <i class="fas fa-print mr-3"></i> +</p>
+                        </li>
+                    </ul>
+                </div>
+                    <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none">
+
+                    <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 text-center mx-auto my-4">
+
+                        <!-- Social buttons -->
+                    <h5 class="font-weight-bold text-uppercase mb-4">Follow Us</h5>
+                    <div class="wrapper">
+                        <div class="icon facebook">
+                            <div class="tooltip">Facebook</div>
+                                <span><i class="fab fa-facebook-f"></i></span>
+                            </div>
+                            <div class="icon twitter">
+                                <div class="tooltip">Twitter</div>
+                                     <span><i class="fab fa-twitter"></i></span>
+                                </div>
+                                <div class="icon github">
+                                    <div class="tooltip">github</div>
+                                        <span><i class="fab fa-github"></i></span>
+                                    </div>
+                                    <div class="icon youtube">
+                                        <div class="tooltip">YouTube</div>
+                                        <span><i class="fab fa-youtube"></i></span>
+                                    </div>
+                                </div>
+
+                            </div>
+                                 <!-- Grid column -->
+                        </div>
+                               <!-- Grid row -->
+                    </div>
+ 
+                           <!-- Copyright -->
+                    <div class="footer-copyright text-center py-3">
+                        GOTICDZ(myticpro), Siret n° 517 888 178 00012 - Tous droits réservés 2021-2022 - Developed by K.MEKSEM© 2021 Copyright:– 
+                        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        Mentions légales</a>
+
+                        <div class="collapse" id="collapseExample">
+                             <div class="card card-body">
+                                {% include 'core/mention-legal.txt' %}
+                             </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer -->
+</section>
+
+<!--   fin section tarif -->
+
+        {% endblock section %}

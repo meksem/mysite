@@ -1,0 +1,1 @@
+from myapps.templatetags.myapps_tags import special_chars
