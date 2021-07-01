@@ -28,7 +28,6 @@ class DevisDemande(models.Model):
     pack_choice=models.EmailField(max_length=254)
     statut = models.CharField(max_length=255, verbose_name="state")
     description = models.TextField()
-    
+            
     def __str__(self):
         return str(self.date_devis)
-    

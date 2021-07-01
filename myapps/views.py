@@ -6,6 +6,7 @@ from .models import Devis, DevisDemande
 from .forms import DevisForm,DevisDemandeForm
 
 
+
 def index(request):
     festival_list = ["Birthday", 'Holi', 'Diwali']
     template = loader.get_template('home.html')
@@ -61,7 +62,7 @@ def tarifs(request):
             statut= request.POST.get("statut")
             pack_choice = request.POST.get("pack_choice")
             description = request.POST.get("description")
-            if DevisDemande.objects.filter(email=email1).exists():
+            if DevisDemande.objects.filter(email=email).exists():
                 messages.info(request,'email est déjà pris,veuillez changer')
                 template = loader.get_template('home.html')
                 return HttpResponse(template.render(request=request))
@@ -73,7 +74,7 @@ def tarifs(request):
                 devisdemande = DevisDemande (firstname=firstname, lastname=lastname, email=email,
                                              phone=phone, statut=statut, pack_choice=pack_choice,description=description)
                 messages.success(request, "votre message a bien éte envoyé ")
-                devis.save()
+                devisdemande.save()
                 template = loader.get_template('home.html')
                 return HttpResponse(template.render(request=request))
                 
