@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'l+g0%u&24*n@yco5ao*uhuel$bjy=lh!w)-=gtin2mt%@+oe_*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myapps',
-    'phonenumber_field',
+    'bootstrap4',
+    
+   
+  
    
 ]
 
@@ -93,11 +96,11 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'goticdz',
-        'USER': 'MEKSEM',
-        'PASSWORD': 'Kameks009',
-        'HOST': 'MEKSEM.mysql.pythonanywhere-services.com',
-        'PORT': '3306',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
     }
 }
 
@@ -151,10 +154,10 @@ MESSAGE_TAGS = {
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS= [
-    os.path.join(BASE_DIR,'static')
+    os.path.join(BASE_DIR,'assets')
 
 ]
-STATIC_ROOT= os.path.join(BASE_DIR,'assets')
+#STATIC_ROOT= os.path.join(BASE_DIR,'assets')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT= os.path.join(BASE_DIR,'media')

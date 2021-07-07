@@ -10,7 +10,7 @@
             <div class="cd-signin-modal__block js-signin-modal-block" data-type="login"> <!-- log in form -->
                 <form id="login-form" class="cd-signin-modal__form" action="signin" method="POST">
                    {% csrf_token %}
-                    {{ form }}
+                   
                  <h3 class="bigsentence black text-center font-weight-bold">Log in</h3>
 
                     <div class="sentence" id="noenter">This account doesn't exist please try again or create a new account.</div> 
@@ -36,7 +36,7 @@
             <div class="cd-signin-modal__block js-signin-modal-block" data-type="signup"> <!-- sign up form -->
                 <form id="signup-form" class="cd-signin-modal__form" action="register" method="POST">
                         {% csrf_token %}
-                          {{ form }}
+                         
                     <h3 class="bigsentence black text-center font-weight-bold">Create</h3>
 
                         <p class="cd-signin-modal__fieldset">
